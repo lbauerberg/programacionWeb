@@ -1161,6 +1161,14 @@ footer {
         margin: 0;
         padding: 0;
     }
+
+    .carrito-panel {
+        height: 70vh;
+    }
+
+    #productos-carrito {
+        max-height: calc(70vh - 200px);
+    }
 }
 
 /* iPad Pro */
@@ -1173,6 +1181,14 @@ footer {
     .tablet-banner {
         height: 100%;
         object-fit: cover;
+    }
+
+    .carrito-panel {
+        height: 70vh;
+    }
+
+    #productos-carrito {
+        max-height: calc(70vh - 200px);
     }
 }
 
@@ -1204,5 +1220,13 @@ footer {
         width: 100%;
         height: 100%;
         object-fit: contain;
+    }
+    
+    .carrito-panel {
+        height: 70vh;
+    }
+
+    #productos-carrito {
+        max-height: calc(70vh - 200px);
     }
 }
