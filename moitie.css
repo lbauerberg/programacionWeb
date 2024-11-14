@@ -740,30 +740,7 @@ footer {
     }
 }
 
-/* Tablet (601px - 1200px) */
-@media screen and (min-width: 601px) and (max-width: 1200px) {
-    .desktop-banner,
-    .mobile-banner {
-        display: none;
-    }
-
-    .tablet-banner {
-        display: block;
-        width: 100%;
-        height: auto;
-        object-fit: contain;
-        margin: 0 auto;
-        max-height: calc(100vh - 90px);
-    }
-
-    .carousel-item {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-}
-
-/* Mobile (600px and below) */
+/* Mobile */
 @media screen and (max-width: 600px) {
     .desktop-banner,
     .tablet-banner {
@@ -776,97 +753,6 @@ footer {
         height: auto;
         max-height: calc(100vh - 90px);
         object-fit: contain;
-    }
-}
-
-/* Tablet (768px - 1024px) */
-@media screen and (min-width: 768px) and (max-width: 1024px) {
-    
-    .desktop-banner,
-    .mobile-banner {
-        display: none;
-    }
-
-    .tablet-banner {
-        display: block;
-        width: 800px;
-        height: 550px;
-        object-fit: contain;
-        margin: 0 auto;
-    }
-
-    .carousel-item {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .carousel-inner {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .footer-container {
-        flex-direction: column;
-        gap: 30px;
-        padding: 20px;
-    }
-
-    .footer-section.contact-info {
-        position: static;
-        transform: none;
-    }
-
-    .footer-section.newsletter {
-        width: 100%;
-        max-width: 100%;
-    }
-
-    .carrito-panel {
-        position: fixed;
-        top: 90px;
-        right: -100%;
-        width: 50%;
-        height: 60vh;
-        z-index: 1002;
-        background-color: white;
-        padding: 15px;
-        max-width: 400px;
-    }
-
-    #productos-carrito {
-        max-height: calc(50vh - 200px);
-        overflow-y: auto;
-    }
-
-    .carrito-panel.visible {
-        right: 0;
-    }
-
-    .carrito-header {
-        padding: 8px 0;
-        margin-bottom: 8px;
-    }
-
-    .carrito-header h2 {
-        font-size: 18px;
-        margin: 0;
-    }
-
-    .item-carrito {
-        padding: 8px 0;
-        gap: 8px;
-    }
-
-    .item-carrito-info h4 {
-        font-size: 14px;
-        margin: 0;
-    }
-
-    .item-carrito-info p {
-        font-size: 12px;
-        margin: 3px 0;
     }
 }
 
@@ -1229,5 +1115,22 @@ footer {
     .cerrar-carrito {
         font-size: 18px;
         padding: 5px;
+    }
+}
+
+/* Tablet (769px - 1200px) */
+@media screen and (min-width: 769px) and (max-width: 1200px) {
+    .desktop-banner,
+    .mobile-banner {
+        display: none !important;
+    }
+
+    .tablet-banner {
+        display: block !important;
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+        margin: 0 auto;
+        max-height: calc(100vh - 90px);
     }
 }
