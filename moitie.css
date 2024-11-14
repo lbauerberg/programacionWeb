@@ -145,19 +145,14 @@ header h1 {
     position: relative;
 }
 
-/* Estilos para las imágenes del banner */
 .desktop-banner,
-.mobile-banner {
+.mobile-banner,
+.tablet-banner {
     width: 100%;
     height: auto;
     object-fit: cover;
     display: block;
     margin: 0;
-}
-
-/* Por defecto, ocultar banners mobile */
-.mobile-banner {
-    display: none;
 }
 
 .carousel-item img {
@@ -341,12 +336,12 @@ footer {
 
 .contact-form input,
 .contact-form textarea {
-    width: calc(100% - 24px); /* Restamos el padding para que no sobresalga */
+    width: calc(100% - 24px);
     padding: 12px;
     margin-bottom: 20px;
     border: 1px solid #ddd;
     border-radius: 4px;
-    box-sizing: border-box; /* Importante: incluye padding y border en el width total */
+    box-sizing: border-box; 
 }
 
 
@@ -487,6 +482,11 @@ footer {
         height: 600px;
     }
     
+    .mobile-banner,
+    .tablet-banner {
+        display: none;
+    }
+
     .mobile-banner {
         display: none;
     }
@@ -625,7 +625,7 @@ footer {
 #productos-carrito {
     flex: 1;
     overflow-y: auto;
-    max-height: calc(100vh - 200px); /* Ajusta este valor según necesites */
+    max-height: calc(100vh - 200px);
     margin-bottom: 20px;
 }
 
@@ -727,9 +727,63 @@ footer {
     background-color: #c5a36f !important;
 }
 
+/* Desktop (>1200px) */
+@media (min-width: 1201px) {
+    .desktop-banner {
+        display: block;
+        height: 600px;
+    }
+    
+    .mobile-banner,
+    .tablet-banner {
+        display: none;
+    }
+}
+
+/* Tablet (601px - 1200px) */
+@media screen and (min-width: 601px) and (max-width: 1200px) {
+    .desktop-banner,
+    .mobile-banner {
+        display: none;
+    }
+
+    .tablet-banner {
+        display: block;
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+        margin: 0 auto;
+        max-height: calc(100vh - 90px);
+    }
+
+    .carousel-item {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+/* Mobile (600px and below) */
+@media screen and (max-width: 600px) {
+    .desktop-banner,
+    .tablet-banner {
+        display: none !important;
+    }
+    
+    .mobile-banner {
+        display: block !important;
+        width: 100%;
+        height: auto;
+        max-height: calc(100vh - 90px);
+        object-fit: contain;
+    }
+}
+
 /* Tablet (768px - 1024px) */
 @media screen and (min-width: 768px) and (max-width: 1024px) {
-    .desktop-banner, .mobile-banner {
+    
+    .desktop-banner,
+    .mobile-banner {
         display: none;
     }
 
@@ -816,7 +870,7 @@ footer {
     }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 768px){
     body {
         display: flex;
         flex-direction: column;
@@ -896,27 +950,34 @@ footer {
     }
 
     .carousel {
-        margin-top: 25px;
+        margin-top: 90px;
         width: 100%;
-        height: calc(100vh - 25px);
+        position: relative;
+        overflow: hidden;
         display: flex;
         align-items: center;
         justify-content: center;
-        position: relative;
+    }
+
+    .carousel-inner {
+        width: 100%;
+        display: flex;
+        transition: transform 0.5s ease-in-out;
     }
 
     .carousel-item {
+        flex: 0 0 100%;
         width: 100%;
-        height: 100%;
         display: flex;
-        align-items: center;
         justify-content: center;
+        align-items: center;
     }
 
     .carousel-item img {
         width: 100%;
-        height: 100%;
-        object-fit: cover;
+        height: auto;
+        object-fit: contain;
+        max-height: calc(100vh - 90px);
     }
 
     #prev, #next {
@@ -927,7 +988,8 @@ footer {
         font-size: 14px;
     }
 
-    .desktop-banner {
+    .desktop-banner,
+    .tablet-banner {
         display: none !important;
     }
     
@@ -935,6 +997,8 @@ footer {
         display: block !important;
         width: 100%;
         height: auto;
+        max-height: calc(100vh - 90px);
+        object-fit: contain;
     }
     
     .carousel {
@@ -974,7 +1038,7 @@ footer {
     .producto-card {
         max-width: 100%;
         margin: 0 auto;
-        aspect-ratio: 1 / 1; /* Hace que la card sea cuadrada */
+        aspect-ratio: 1 / 1;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
@@ -982,7 +1046,7 @@ footer {
 
     .producto-card img {
         width: 100%;
-        height: 65%; /* Ajusta la altura de la imagen */
+        height: 65%;
         object-fit: cover;
     }
 
@@ -998,7 +1062,7 @@ footer {
     .producto-card button {
         width: 100%;
         padding: 12px;
-        margin-top: auto; /* Empuja el botón hacia abajo */
+        margin-top: auto;
     }
 
     footer {
@@ -1054,13 +1118,13 @@ footer {
         width: 0;
         position: fixed;
         z-index: 1002;
-        top: 90px; /* Reducido significativamente para subir todo el menú */
+        top: 90px;
         left: 0;
         background-color: white;
         overflow-x: hidden;
         transition: 0.5s;
         padding-top: 40px;
-        height: calc(100vh - 90px); /* Ajustado acorde al nuevo top */
+        height: calc(100vh - 90px);
     }
 
     .side-menu .close-btn {
